@@ -32,3 +32,13 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 antigen theme bhilburn/powerlevel9k powerlevel9k
 
 antigen apply
+
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+        source /etc/profile.d/vte.sh
+fi
+
+alias git=hub
+
+export EDITOR="/usr/bin/vim"
+
+unalias rm
