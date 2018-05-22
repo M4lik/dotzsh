@@ -25,6 +25,10 @@ antigen bundle sudo
 antigen bundle vagrant
 antigen bundle web-search
 
+# NVM
+export NVM_LAZY_LOAD=true
+antigen bundle lukechilds/zsh-nvm
+
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
 
