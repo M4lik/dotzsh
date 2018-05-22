@@ -29,7 +29,8 @@ antigen bundle web-search
 antigen bundle zsh-users/zsh-syntax-highlighting
 
 # Set the used theme
-antigen theme bhilburn/powerlevel9k powerlevel9k
+antigen theme bhilburn/powerlevel9k powerlevel9k #Depends on ryanoasis/nerd-fonts
+#antigen theme juanghurtado
 
 antigen apply
 
