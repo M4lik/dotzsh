@@ -7,4 +7,5 @@ For inital setup just copy this and paste it into your terminal
 cd ~
 git clone https://github.com/M4lik/dotzsh.git .zsh
 ln -s .zsh/.zshrc .zshrc
+cd -
 ```
