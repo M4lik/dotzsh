@@ -18,7 +18,7 @@ antigen bundle docker
 antigen bundle git-extras
 antigen bundle git-flow
 antigen bundle github
-antigen bundle lol
+#antigen bundle lol
 antigen bundle python
 antigen bundle repo
 antigen bundle sudo
@@ -44,6 +44,10 @@ fi
 
 alias git=hub
 
+#env vars
 export EDITOR="/usr/bin/vim"
+export GOPATH="$HOME/go"
+
+PATH=$PATH:${GOPATH//://bin:}/bin
 
 unalias rm
