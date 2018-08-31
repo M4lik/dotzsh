@@ -26,12 +26,17 @@ antigen bundle vagrant
 antigen bundle web-search
 antigen bundle djui/alias-tips
 
+# NVM
+export NVM_LAZY_LOAD=true
+antigen bundle lukechilds/zsh-nvm
+
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
 
 # Set the used theme
 #antigen theme bhilburn/powerlevel9k powerlevel9k
 antigen theme agnoster/agnoster-zsh-theme
+#antigen theme juanghurtado
 
 
 antigen apply
@@ -48,6 +53,8 @@ alias git=hub
 # Env vars
 export EDITOR="/usr/bin/vim"
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export GOPATH="$HOME/go"
+PATH=$PATH:${GOPATH//://bin:}/bin
 
 # alias-tips config
 export ZSH_PLUGINS_ALIAS_TIPS_FORCE=0       # Force usage of aliases
