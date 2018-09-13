@@ -1,7 +1,8 @@
 #!/bin/sh
 
+. ./config.local
+
 LOLCAT=/usr/games/lolcat #whereis lolcat
-. ./bannertext.local
 
 [ -r /etc/lsb-release ] && . /etc/lsb-release
 
@@ -11,7 +12,7 @@ then
   DISTRIB_DESCRIPTION=$(lsb_release -s -d)
 fi
 
-figlet "$BANNER" -c | "$LOLCAT" -f
+figlet "$BANNERTEXT" -c | "$LOLCAT" -f
 printf "\n"
 
 printf "\t%s \t\tKernel: %s\n" "$DISTRIB_DESCRIPTION" "$(uname -r)"
