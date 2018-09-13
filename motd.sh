@@ -1,7 +1,7 @@
 #!/bin/sh
 
 LOLCAT=/usr/games/lolcat #whereis lolcat
-BANNER="ADD BANNER HERE" #custom name
+. ./bannertext.local
 
 [ -r /etc/lsb-release ] && . /etc/lsb-release
 
