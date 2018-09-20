@@ -1,6 +1,6 @@
 #!/bin/sh
 
-. ./config.local
+. ~/.zsh/config.local
 
 LOLCAT=/usr/games/lolcat #whereis lolcat
 
