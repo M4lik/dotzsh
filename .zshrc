@@ -18,36 +18,36 @@ antigen bundle docker
 antigen bundle git-extras
 antigen bundle git-flow
 antigen bundle github
-#antigen bundle lol
 antigen bundle python
 antigen bundle repo
 antigen bundle sudo
 antigen bundle vagrant
 antigen bundle web-search
 antigen bundle djui/alias-tips
+antigen bundle zsh-users/zsh-autosuggestions
 
-# NVM
-export NVM_LAZY_LOAD=true
-antigen bundle lukechilds/zsh-nvm
+# NVM - Uncomment to enable/install nvm
+#export NVM_LAZY_LOAD=true
+#antigen bundle lukechilds/zsh-nvm
 
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
 
 # Set the used theme
 #antigen theme bhilburn/powerlevel9k powerlevel9k
-antigen theme agnoster/agnoster-zsh-theme
-#antigen theme juanghurtado
+#antigen theme agnoster/agnoster-zsh-theme
+antigen theme juanghurtado
 
 
 antigen apply
 
 
-
+# Tilix VTE fix
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
         source /etc/profile.d/vte.sh
 fi
 
-alias git=hub
+#alias git=hub # Uncomment if hub is installed
 
 
 # Env vars

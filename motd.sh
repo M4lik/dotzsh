@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/bash
 
-. ~/.zsh/config.local
+. ~/.zsh/local.config
 
 LOLCAT=/usr/games/lolcat #whereis lolcat
 
@@ -12,8 +12,17 @@ then
   DISTRIB_DESCRIPTION=$(lsb_release -s -d)
 fi
 
-figlet "$BANNERTEXT" -c | "$LOLCAT" -f
-printf "\n"
+if [ $ENABLE_BANNERTEXT == 1 ]
+then
+  if [ $FANCY_BANNERTEXT == 1 ]
+  then
+    figlet "$BANNERTEXT" -c | "$LOLCAT" -f
+  else
+    printf "\t%s" $BANNERTEXT
+  fi
+
+  printf "\n"
+fi
 
 printf "\t%s \t\tKernel: %s\n" "$DISTRIB_DESCRIPTION" "$(uname -r)"
 printf "\n"
@@ -26,8 +35,11 @@ total_memory=$(free -t -g | grep "Mem" | awk '{print $2" GB";}')
 swap_usage=$(free -m | awk '/Swap/ { printf("%3.1f%%", "exit !$2;$3/$2*100") }')
 time=$(uptime | grep -ohe 'up .*' | sed 's/,/\ hours/g' | awk '{ printf $2" "$3 }')
 processes=$(ps aux | wc -l)
+[[  $ENABLE_CMOTD == 1 ]] && commitmessage=$(curl -s https://whatthecommit.com/index.txt) || commitmessage="Get som net, bro"
 
 printf "\t\tAs of: %s\n\n" "$date"
 printf "\tSystem load:\t%s\t\tProcesses:\t%s\n" "$load" "$processes"
 printf "\tMemory usage:\t%s/%s\t\tUptime:\t\t%s\n" "$memory_usage" "$total_memory" "$time"
 printf "\tDisk usage:\t%s\t\tSwap:\t\t%s\n\n" "$root_usage" "$swap_usage"
+
+[[  $ENABLE_CMOTD == 1 ]] && printf "\tCommit message of the day:\n\t%s\n\n" "$commitmessage"
