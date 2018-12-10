@@ -1,5 +1,10 @@
 source ~/.zsh/antigen.zsh
 
+# Tilix VTE fix
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+        source /etc/profile.d/vte.sh
+fi
+
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
 
@@ -40,12 +45,6 @@ antigen theme juanghurtado
 
 
 antigen apply
-
-
-# Tilix VTE fix
-if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
-        source /etc/profile.d/vte.sh
-fi
 
 #alias git=hub # Uncomment if hub is installed
 
