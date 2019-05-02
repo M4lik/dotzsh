@@ -40,8 +40,8 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 
 # Set the used theme
 #antigen theme bhilburn/powerlevel9k powerlevel9k
-#antigen theme agnoster/agnoster-zsh-theme
-antigen theme juanghurtado
+antigen theme agnoster/agnoster-zsh-theme
+#antigen theme juanghurtado
 
 
 antigen apply
