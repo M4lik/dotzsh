@@ -24,6 +24,7 @@ antigen bundle git-extras
 antigen bundle git-flow
 antigen bundle github
 antigen bundle python
+antigen bundle rbenv
 antigen bundle repo
 antigen bundle sudo
 antigen bundle vagrant
@@ -32,8 +33,11 @@ antigen bundle djui/alias-tips
 antigen bundle zsh-users/zsh-autosuggestions
 
 # NVM - Uncomment to enable/install nvm
-#export NVM_LAZY_LOAD=true
-#antigen bundle lukechilds/zsh-nvm
+export NVM_LAZY_LOAD=true
+antigen bundle lukechilds/zsh-nvm
+
+# rbenv
+antigen bundle cswl/zsh-rbenv
 
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
@@ -67,5 +71,6 @@ export DEFAULT_USER=$USER
 
 unalias rm
 
+alias ls='colorls --gs --sd'
 
 ~/.zsh/motd.sh
